@@ -1,0 +1,51 @@
+body {
+  padding-bottom: 50px;
+}
+
+.task {
+  margin-top: 24px;
+  margin-bottom: 80px;
+}
+
+.task-header {
+  margin-bottom: 24px;
+}
+
+.task-header > .task-title,
+.task-header > .alert {
+  height: 40px;
+  line-height: 40px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.task-text {
+  margin-bottom: 32px;
+  padding: 16px;
+  border: 1px solid #d7d9e1;
+  border-radius: 8px;
+}
+
+.task-text > p:last-child {
+  margin-bottom: 0;
+}
+
+.task-image-container {
+  position: relative;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.task-answers {
+  margin-bottom: 48px;
+}
+
+.task-variant.form-check {
+  margin-bottom: 8px;
+  padding: 10px 16px 10px 40px;
+  border: 1px solid #d7d9e1;
+  border-radius: 8px;
+  cursor: pointer;
+}
