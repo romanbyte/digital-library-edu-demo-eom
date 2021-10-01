@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -9,7 +10,7 @@ module.exports = {
     clean: true,
     path: path.resolve(__dirname, './dist'),
     assetModuleFilename: 'assets/images/[hash][ext]',
-    filename: '[name].[hash].js'
+    filename: '[name].[contenthash].js'
   },
   plugins: [
     new HtmlPlugin({
@@ -25,6 +26,9 @@ module.exports = {
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true
       }
+    }),
+    new CopyPlugin({
+      patterns: [{ from: 'src/eom.json' }]
     })
   ],
   module: {

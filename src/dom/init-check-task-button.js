@@ -8,15 +8,15 @@ import { checkDisplay, checkTask, findTask } from '../tasks';
  */
 export function initCheckTaskButtons() {
   document.querySelectorAll('.task-check').forEach((button) => {
+    const taskNumber = getClosestTaskNumber(button);
+    const task = findTask(taskNumber);
+
+    if (!task) {
+      console.warn('[Task]', `Task#${taskNumber} not found.`);
+      return;
+    }
+
     button.addEventListener('click', (evt) => {
-      const taskNumber = getClosestTaskNumber(evt.target);
-      const task = findTask(taskNumber);
-
-      if (!task) {
-        console.warn('[Task]', `Task#${taskNumber} not found.`);
-        return;
-      }
-
       sendXApiMessage(Verbs.Hinted, { step: taskNumber });
 
       const isCorrect = checkTask(task);

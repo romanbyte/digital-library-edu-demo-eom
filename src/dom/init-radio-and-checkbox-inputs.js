@@ -11,9 +11,10 @@ export function initRadioAndCheckboxInputs() {
       '.task-answers input[type=radio], .task-answers input[type=checkbox]'
     )
     .forEach((input) => {
+      const taskNumber = getClosestTaskNumber(input);
+
       input.addEventListener('change', (evt) => {
         const value = evt.target.value;
-        const taskNumber = getClosestTaskNumber(evt.target);
 
         sendXApiMessage(Verbs.Answered, { step: taskNumber, value });
       });

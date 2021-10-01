@@ -9,6 +9,8 @@ export function initTexInputs() {
   document
     .querySelectorAll('.task-answers input[type=text]')
     .forEach((input) => {
+      const taskNumber = getClosestTaskNumber(input);
+
       input.addEventListener('focus', (evt) => {
         evt.target.dataset.oldValue = evt.target.value;
       });
@@ -20,8 +22,6 @@ export function initTexInputs() {
         if (prevValue === value) {
           return;
         }
-
-        const taskNumber = getClosestTaskNumber(evt.target);
 
         sendXApiMessage(Verbs.Answered, { step: taskNumber, value });
       });
