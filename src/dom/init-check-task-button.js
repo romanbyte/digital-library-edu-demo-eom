@@ -1,14 +1,16 @@
 import { sendXApiMessage } from './send-x-api-message';
-import { getClosestTaskNumber } from './get-closest-task-number';
 import { Verbs } from '../constants';
 import { checkDisplay, checkTask, findTask } from '../tasks';
+import { getCurrentTaskNumber } from './state';
 
 /**
- * Обработка нажатия кнопок «Проверить задание».
+ * Обработка нажатия кнопки «Проверить задание».
  */
-export function initCheckTaskButtons() {
-  document.querySelectorAll('.task-check').forEach((button) => {
-    const taskNumber = getClosestTaskNumber(button);
+export function initCheckTaskButton() {
+  const button = document.getElementById('task-check');
+
+  button.addEventListener('click', (evt) => {
+    const taskNumber = getCurrentTaskNumber();
     const task = findTask(taskNumber);
 
     if (!task) {
@@ -16,12 +18,10 @@ export function initCheckTaskButtons() {
       return;
     }
 
-    button.addEventListener('click', (evt) => {
-      sendXApiMessage(Verbs.Hinted, { step: taskNumber });
+    sendXApiMessage(Verbs.Hinted, { step: taskNumber });
 
-      const isCorrect = checkTask(task);
+    const isCorrect = checkTask(task);
 
-      checkDisplay(task, isCorrect);
-    });
+    checkDisplay(task, isCorrect);
   });
 }

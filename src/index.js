@@ -7,11 +7,12 @@ import './style.css';
 import { Verbs } from './constants';
 import {
   sendXApiMessage,
-  initCheckTaskButtons,
+  initCheckTaskButton,
   initRadioAndCheckboxInputs,
   initTabs,
   initTexInputs,
-  waitForIframeResizer
+  waitForIframeResizer,
+  initCompleteEomButton
 } from './dom';
 
 /**
@@ -22,7 +23,8 @@ window.addEventListener('load', () => {
     initTabs();
     initRadioAndCheckboxInputs();
     initTexInputs();
-    initCheckTaskButtons();
+    initCheckTaskButton();
+    initCompleteEomButton();
 
     sendXApiMessage(Verbs.Started);
     sendXApiMessage(Verbs.Launched, { step: 1 });

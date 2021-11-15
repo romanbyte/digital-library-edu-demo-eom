@@ -1,10 +1,6 @@
 body {
-  padding-bottom: 50px;
-}
-
-.task {
-  margin-top: 24px;
-  margin-bottom: 80px;
+  padding: 24px 0 74px;
+  position: relative;
 }
 
 .task-header {
@@ -48,4 +44,29 @@ body {
   border: 1px solid #d7d9e1;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.task-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 0;
+  background-color: #ffffff;
+  border-top: 1px solid #D7D9E1;
+  z-index: 100;
+}
+
+.task-footer .page-link {
+  padding: 3px 10px;
+  width: 32px;
+  height: 32px;
+  font-weight: 500;
+}
+
+.task-footer .page-link.active {
+  z-index: 3;
+  color: white;
+  background-color: #2B8217;
+  border-color: #2B8217;
 }

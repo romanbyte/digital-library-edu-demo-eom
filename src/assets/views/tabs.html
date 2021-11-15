@@ -1,48 +1,66 @@
-<ul
-  class="nav nav-pills justify-content-center mt-3"
-  id="tasks-tabs"
-  role="tablist"
->
-  <li class="nav-item" role="presentation">
-    <button
-      class="nav-link active"
-      id="task-1-tab"
-      data-bs-toggle="tab"
-      data-bs-target="#task-1-tab-content"
-      data-task-number="1"
-      aria-selected="true"
-      type="button"
-      role="tab"
-    >
-      1
-    </button>
-  </li>
+<footer class="task-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex align-items-center justify-content-start">
+        <button id="task-check" class="btn btn-outline-success">
+          Проверить задание
+        </button>
+      </div>
+      <div class="col d-flex align-items-center justify-content-center">
+        <ul
+          class="nav pagination justify-content-center"
+          id="tasks-tabs"
+          role="tablist"
+        >
+          <li class="page-item" role="presentation">
+            <button
+              class="page-link active"
+              id="task-1-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#task-1-tab-content"
+              data-task-number="1"
+              aria-selected="true"
+              type="button"
+              role="tab"
+            >
+              1
+            </button>
+          </li>
 
-  <li class="nav-item" role="presentation">
-    <button
-      class="nav-link"
-      id="task-2-tab"
-      data-bs-toggle="tab"
-      data-bs-target="#task-2-tab-content"
-      data-task-number="2"
-      type="button"
-      role="tab"
-    >
-      2
-    </button>
-  </li>
+          <li class="page-item" role="presentation">
+            <button
+              class="page-link"
+              id="task-2-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#task-2-tab-content"
+              data-task-number="2"
+              type="button"
+              role="tab"
+            >
+              2
+            </button>
+          </li>
 
-  <li class="nav-item" role="presentation">
-    <button
-      class="nav-link"
-      id="task-3-tab"
-      data-bs-toggle="tab"
-      data-bs-target="#task-3-tab-content"
-      data-task-number="3"
-      type="button"
-      role="tab"
-    >
-      3
-    </button>
-  </li>
-</ul>
+          <li class="page-item" role="presentation">
+            <button
+              class="page-link"
+              id="task-3-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#task-3-tab-content"
+              data-task-number="3"
+              type="button"
+              role="tab"
+            >
+              3
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="col d-flex align-items-center justify-content-end">
+        <button id="eom-complete" class="btn btn-primary">
+          Завершить
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>

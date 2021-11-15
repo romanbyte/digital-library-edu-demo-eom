@@ -10,3 +10,8 @@ yarn dev
 exit
 yarn dev
 exit
+yarn install
+yarn игшдв
+yarn build
+yarn build
+exit
